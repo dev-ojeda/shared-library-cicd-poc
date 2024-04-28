@@ -4,12 +4,12 @@ package com.builder.util
 
 public class Mock {
 
-    static String listTipo() {
+    def listTipo() {
         def listaTipo = ["\"Seleccione:selected\"", "\"dprep\"", "\"purp\""] as LinkedList
         return buildScript(listaTipo)
     }
 
-    static String listGeo() {
+    def listGeo() {
         def listaGeo = ["\"Seleccione:selected\"", "\"AR\"", "\"CL\""] as LinkedList
         return buildScript(listaGeo)
     }
@@ -48,8 +48,8 @@ public class Mock {
         '''
     }
 
-    static LinkedList listaDominioPorGeo(Object tipo, Object geo) {
-        def resultado = [] as LinkedList
+    def listaDominioPorGeo(Object tipo, Object geo) {
+        def resultado = []
         def listaDominioCLDprep = ["\"DMCLDPREP1\"", "\"DMCLDPREP2\""] as LinkedList
         def listaDominioARDprep = ["\"DMARDPREP1\"", "\"DMARDPREP2\""] as LinkedList
         def listaDominioCLPurp = ["\"DMCLPURP1\"", "\"DMCLPURP2\""] as LinkedList
