@@ -80,15 +80,15 @@ public class Menu {
         ])
     }
 
-    def choice_tipo(){
+    static def choice_tipo(){
         return Mock.lista_tipo()
     }
 
-    def choice_geo(){
+    static def choice_geo(){
         return Mock.lista_geo()
     }
 
-    def choice_dominio_por_geo(Object tipo, Object geo){
+    static def choice_dominio_por_geo(Object tipo, Object geo){
         return Mock.lista_dominio_por_geo(tipo, geo)
     }
 }
