@@ -5,12 +5,12 @@ package com.builder.util
 public class Mock {
 
     static def lista_tipo() {
-        def listaTipo = new String[] {"\"Seleccione:selected\"", "\"dprep\"", "\"purp\""}
+        def listaTipo = ["\"Seleccione:selected\"", "\"dprep\"", "\"purp\""] as LinkedList
         return build_cript(listaTipo)
     }
 
     static def lista_geo() {
-        def listaGeo = new String[] {"\"Seleccione:selected\"", "\"AR\"", "\"CL\""}
+        def listaGeo = ["\"Seleccione:selected\"", "\"AR\"", "\"CL\""] as LinkedList
         return build_cript(listaGeo)
     }
 
