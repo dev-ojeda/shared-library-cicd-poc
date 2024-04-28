@@ -70,7 +70,7 @@ def menu(){
                     [
                         classpath: [], 
                         sandbox: true, 
-                        script: choiceGeo(this.params.Tipo,this.params.Geos)
+                        script: choiceDominioPorGeo(this.params.Tipo,this.params.Geos)
                     ]
                 ]
             ]
@@ -89,5 +89,3 @@ def choiceGeo(){
 def choiceDominioPorGeo(Object tipo, Object geo){
     return Mock.listaDominioPorGeo(tipo, geo)
 }
-
-return this
