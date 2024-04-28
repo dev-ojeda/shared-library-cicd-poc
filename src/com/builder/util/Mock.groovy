@@ -4,25 +4,25 @@ package com.builder.util
 
 public class Mock {
 
-    def listTipo() {
-        def listaTipo = ["\"Seleccione:selected\"", "\"dprep\"", "\"purp\""] as LinkedList
-        return buildScript(listaTipo)
+    def lista_tipo() {
+        def listaTipo = new String[] {"\"Seleccione:selected\"", "\"dprep\"", "\"purp\""}
+        return build_cript(listaTipo)
     }
 
-    def listGeo() {
-        def listaGeo = ["\"Seleccione:selected\"", "\"AR\"", "\"CL\""] as LinkedList
-        return buildScript(listaGeo)
+    def lista_geo() {
+        def listaGeo = new String[] {"\"Seleccione:selected\"", "\"AR\"", "\"CL\""}
+        return build_cript(listaGeo)
     }
 
-    def listDominio() {
+    def lista_dominio() {
         return listaDominio
     }
 
-    String buildScript(LinkedList values) {
+    String build_cript(LinkedList values) {
         return " return ${values} "
     }
 
-    def populateItemsDprep(Object tipo, Object cl, Object ar) {
+    def populate_items_dprep(Object tipo, Object cl, Object ar) {
         return '''if(Geos.equals('CL') && Tipo.equals("${tipo}")){
             return $cl
         }
@@ -35,7 +35,7 @@ public class Mock {
         '''
     }
 
-    def populateItemsPurp(Object tipo, Object cl, Object ar) {
+    def populate_items_purp(Object tipo, Object cl, Object ar) {
         return '''if(Geos.equals('CL') && Tipo.equals("$tipo")){
             return $cl
         }
@@ -48,7 +48,7 @@ public class Mock {
         '''
     }
 
-    def listaDominioPorGeo(Object tipo, Object geo) {
+    def lista_dominio_por_geo(Object tipo, Object geo) {
         def resultado = []
         def listaDominioCLDprep = ["\"DMCLDPREP1\"", "\"DMCLDPREP2\""] as LinkedList
         def listaDominioARDprep = ["\"DMARDPREP1\"", "\"DMARDPREP2\""] as LinkedList

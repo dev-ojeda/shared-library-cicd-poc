@@ -89,5 +89,3 @@ def choiceGeo(){
 def choiceDominioPorGeo(Object tipo, Object geo){
     return Mock.listaDominioPorGeo(tipo, geo)
 }
-
-return this
