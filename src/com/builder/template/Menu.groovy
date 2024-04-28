@@ -3,7 +3,7 @@ package com.builder.template
 
 import com.builder.util.Mock
 
-def menu(){
+def inicio(){
     properties([
             parameters([
             [
