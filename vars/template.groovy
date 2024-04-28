@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-import com.builder.util.Mock
+import com.builder.template.Menu
 
 def menu(){
     properties([
@@ -24,7 +24,7 @@ def menu(){
                     [
                         classpath: [], 
                         sandbox: true, 
-                        script: choiceTipo()
+                        script: Menu.choice_tipo()
                     ]
                 ]
             ], 
@@ -47,7 +47,7 @@ def menu(){
                     [
                         classpath: [], 
                         sandbox: true, 
-                        script: choiceGeo()
+                        script: Menu.choice_geo()
                     ]
                 ]
             ], 
@@ -70,22 +70,10 @@ def menu(){
                     [
                         classpath: [], 
                         sandbox: true, 
-                        script: choiceDominioPorGeo(this.params.Tipo,this.params.Geos)
+                        script: Menu.choice_dominio_por_geo(this.params.Tipo,this.params.Geos)
                     ]
                 ]
             ]
         ])
     ])
-}
-
-def choiceTipo(){
-    return Mock.listaTipo()
-}
-
-def choiceGeo(){
-    return Mock.listaGeo()
-}
-
-def choiceDominioPorGeo(Object tipo, Object geo){
-    return Mock.listaDominioPorGeo(tipo, geo)
 }
