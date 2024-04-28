@@ -5,24 +5,24 @@ package com.builder.util
 public class Mock {
 
     static def lista_tipo() {
-        def listaTipo = ["\"Seleccione:selected\"", "\"dprep\"", "\"purp\""] as LinkedList
-        return build_cript(listaTipo)
+        def listaTipo = ["\"Seleccione:selected\"", "\"dprep\"", "\"purp\""]
+        return build_script(listaTipo)
     }
 
     static def lista_geo() {
-        def listaGeo = ["\"Seleccione:selected\"", "\"AR\"", "\"CL\""] as LinkedList
-        return build_cript(listaGeo)
+        def listaGeo = ["\"Seleccione:selected\"", "\"AR\"", "\"CL\""]
+        return build_script(listaGeo)
     }
 
     // static def lista_dominio() {
     //     return listaDominio
     // }
 
-    static String build_cript(LinkedList values) {
+    public static String build_script(def values) {
         return " return ${values} "
     }
 
-    static def populate_items_dprep(Object tipo, Object cl, Object ar) {
+    public static def populate_items_dprep(Object tipo, Object cl, Object ar) {
         return '''if(Geos.equals('CL') && Tipo.equals("${tipo}")){
             return $cl
         }
@@ -35,7 +35,7 @@ public class Mock {
         '''
     }
 
-    static def populate_items_purp(Object tipo, Object cl, Object ar) {
+    public static def populate_items_purp(Object tipo, Object cl, Object ar) {
         return '''if(Geos.equals('CL') && Tipo.equals("$tipo")){
             return $cl
         }
@@ -50,10 +50,10 @@ public class Mock {
 
     static def lista_dominio_por_geo(Object tipo, Object geo) {
         def resultado = []
-        def listaDominioCLDprep = ["\"DMCLDPREP1\"", "\"DMCLDPREP2\""] as LinkedList
-        def listaDominioARDprep = ["\"DMARDPREP1\"", "\"DMARDPREP2\""] as LinkedList
-        def listaDominioCLPurp = ["\"DMCLPURP1\"", "\"DMCLPURP2\""] as LinkedList
-        def listaDominioARPurp = ["\"DMARPURP1\"", "\"DMARPURP2\""] as LinkedList
+        def listaDominioCLDprep = ["\"DMCLDPREP1\"", "\"DMCLDPREP2\""]
+        def listaDominioARDprep = ["\"DMARDPREP1\"", "\"DMARDPREP2\""]
+        def listaDominioCLPurp = ["\"DMCLPURP1\"", "\"DMCLPURP2\""]
+        def listaDominioARPurp = ["\"DMARPURP1\"", "\"DMARPURP2\""]
         if (tipo == 'dprep' || geo == 'CL' || geo == 'AR') {
             resultado = populate_items_dprep(tipo, listaDominioCLDprep, listaDominioARDprep)
         }
