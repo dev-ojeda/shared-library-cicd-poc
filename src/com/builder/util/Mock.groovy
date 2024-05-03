@@ -4,12 +4,12 @@ package com.builder.util
 
 public class Mock {
 
-    static def lista_tipo() {
+    static String lista_tipo() {
         def listaTipo = ["\"Seleccione:selected\"", "\"dprep\"", "\"purp\""]
         return build_script(listaTipo)
     }
 
-    static def lista_geo() {
+    static String lista_geo() {
         def listaGeo = ["\"Seleccione:selected\"", "\"AR\"", "\"CL\""]
         return build_script(listaGeo)
     }
@@ -22,7 +22,7 @@ public class Mock {
         return " return ${values} "
     }
 
-    public static def populate_items_dprep(Object tipo, Object cl, Object ar) {
+    public static String populate_items_dprep(Object tipo, Object cl, Object ar) {
         return '''if(Geos.equals('CL') && Tipo.equals("${tipo}")){
             return $cl
         }
@@ -35,7 +35,7 @@ public class Mock {
         '''
     }
 
-    public static def populate_items_purp(Object tipo, Object cl, Object ar) {
+    public static String populate_items_purp(Object tipo, Object cl, Object ar) {
         return '''if(Geos.equals('CL') && Tipo.equals("$tipo")){
             return $cl
         }
